@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # WatTun installer.
-#   bash <(curl -fsSL https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
+#   bash <(curl -fsSL https://raw.githubusercontent.com/mfranjbar/WatTunnel-Private/import/upstream-3.3.7/install.sh)
 # Options:
 #   --version vX.Y.Z   install that release instead of the latest
 #   --force            reinstall even when the same version is installed
@@ -96,7 +96,7 @@ WATTUN_BANNER=(
 META_TELEGRAM='@WatxDev'
 
 banner() { # [1 = animated line-by-line reveal] : logo, links beside it when the terminal is wide enough, else below
-  local i cols side=("github.com/JohnWatsoon" "t.me/${META_TELEGRAM#@}" '')
+  local i cols side=("github.com/mfranjbar/WatTunnel-Private" "t.me/${META_TELEGRAM#@}" '')
   cols=$(tput cols 2>/dev/null || echo 80)
   for i in 0 1 2; do
     gfg "$i"
