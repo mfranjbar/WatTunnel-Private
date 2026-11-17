@@ -46,15 +46,7 @@ jobs:
         run: go test -timeout 20m ./...
 
       - name: Build release payload
-        run: |
-          mkdir -p dist
-          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o dist/wattun ./cmd/wattun
-          cp install.sh wattun-manager dist/
-          chmod 755 dist/install.sh dist/wattun-manager dist/wattun
-          cd dist
-          sha256sum wattun > wattun.sha256
-          sha256sum wattun install.sh wattun-manager > SHA256SUMS
-          cd ..
+        run: bash build.sh
 
       - name: Upload unsigned release payload
         uses: actions/upload-artifact@v4
