@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - import/upstream-3.3.7
+      - work/iran-kharej-deployment
     paths-ignore:
       - '**.md'
       - 'docs/**'
