@@ -1,6 +1,9 @@
 name: Import upstream WatTunnel baseline
 
 on:
+  push:
+    branches: [import/upstream-3.3.7]
+    paths: [.github/workflows/import-upstream.yml]
   workflow_dispatch:
 
 permissions:
