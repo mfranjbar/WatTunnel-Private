@@ -1,1 +1,1 @@
-CI trigger marker for the complete Go import-path cleanup validation. No runtime effect.
+CI trigger marker after all detected upstream Go imports were replaced. No runtime effect.
