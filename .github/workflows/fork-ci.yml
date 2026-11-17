@@ -17,20 +17,18 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  test-build:
-    name: Test and build (Go 1.26, Linux amd64)
+  test:
+    name: Test (Go 1.26)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
           go-version: '1.26.0'
           cache: true
-
       - name: Verify Go formatting
         run: |
           files="$(gofmt -l $(git ls-files '*.go'))"
@@ -38,20 +36,29 @@ jobs:
             echo "$files"
             exit 1
           fi
-
       - name: Verify shell scripts
         run: bash -n install.sh wattun-manager
-
       - name: Run tests
         run: go test -timeout 20m ./...
 
-      - name: Build release payload
+  package:
+    name: Build release payload (Linux amd64, Linux arm64, Windows amd64)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.26.0'
+          cache: true
+      - name: Build all supported targets
         run: bash build.sh
-
       - name: Upload unsigned release payload
         uses: actions/upload-artifact@v4
         with:
-          name: wattunnel-linux-amd64-${{ github.sha }}
+          name: wattunnel-release-${{ github.sha }}
           path: dist/
           if-no-files-found: error
           retention-days: 14
