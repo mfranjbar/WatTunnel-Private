@@ -1,0 +1,38 @@
+name: Import upstream WatTunnel baseline
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout personal repository
+        uses: actions/checkout@v4
+        with:
+          ref: import/upstream-3.3.7
+          fetch-depth: 0
+
+      - name: Fetch pinned upstream source
+        env:
+          UPSTREAM_COMMIT: 77a374660d45f398e5a36bccae7c48e2e6b15c2c
+        run: |
+          git clone --filter=blob:none https://github.com/JohnWatsoon/WatTunnel.git /tmp/wattunnel-upstream
+          git -C /tmp/wattunnel-upstream checkout --detach "$UPSTREAM_COMMIT"
+          test "$(git -C /tmp/wattunnel-upstream rev-parse HEAD)" = "$UPSTREAM_COMMIT"
+          rsync -a --exclude='.git' /tmp/wattunnel-upstream/ ./
+
+      - name: Commit imported baseline
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No upstream changes to import."
+            exit 0
+          fi
+          git commit -m "chore: import WatTunnel upstream baseline 3.3.7"
+          git push origin HEAD:import/upstream-3.3.7
