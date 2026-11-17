@@ -38,7 +38,7 @@ else
   BIN=${WAT_BIN:-/usr/local/bin/wattun}
   MGR=/usr/local/bin/wattun-manager
 fi
-REPO=${WAT_REPO:-JohnWatsoon/WatTunnel}
+REPO=${WAT_REPO:-mfranjbar/WatTunnel-Private}
 # Release-signing public key. update() checks the installer it runs as root against the release's signed SHA256SUMS.
 # This PEM must stay byte-identical to SIG_PUB in install.sh; regenerate the key in both scripts together.
 SIG_PUB=$(cat <<'PEM'
