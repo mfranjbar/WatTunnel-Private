@@ -1,4 +1,4 @@
-module github.com/JohnWatsoon/WatTunnel
+module github.com/mfranjbar/WatTunnel-Private
 
 go 1.26.0
 
