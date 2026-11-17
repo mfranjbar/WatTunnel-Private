@@ -20,7 +20,7 @@
 set -uo pipefail
 shopt -s extglob
 
-REPO=${WAT_REPO:-JohnWatsoon/WatTunnel}
+REPO=${WAT_REPO:-mfranjbar/WatTunnel-Private}
 PROXY=${WAT_PROXY:-}
 BIN=${WAT_BIN:-/usr/local/bin/wattun}
 MGR=${WAT_MGR:-/usr/local/bin/wattun-manager}
@@ -189,7 +189,7 @@ Options:
 Environment:
   WAT_PROXY=https://ghproxy.net/   Proxy prefix for GitHub downloads (when github.com is filtered; trust-on-first-use)
   WAT_ALLOW_UNSIGNED_MANAGER=1     Install wattun-manager from raw.githubusercontent when the release does not ship it
-  WAT_REPO=owner/name              Fork or repository to install from (default: JohnWatsoon/WatTunnel)
+  WAT_REPO=owner/name              Fork or repository to install from (default: mfranjbar/WatTunnel-Private)
   WAT_SIG_PUB=/path/to/pub.pem     Alternative release-signing public key (for custom forks)
   WAT_SKIP_CHECKSUM=1              Install local dist/ binary without a checksum file
   WAT_NO_ANIM=1                    Disable animations and spinners
