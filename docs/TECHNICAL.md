@@ -2423,7 +2423,7 @@ Raw TCP on the same path (8 BBR connections, no tunnel) moved 78 MB/s; 32 connec
   an SSH session that once pasted a large file turns interactive again once it goes quiet.
 - **Loss cuts off.** A direct pool no longer cuts its rate on loss (TCP's loss is not ours; `WAT_REL_LOSSCUT=1`
   restores it), and its window also covers 2 x srtt (`WAT_CWND_MINRTT=1` turns that off). CDN tunnels keep the
-  2.4.17 rules for both. `WAT_DIRECT_LOSS_MS=N` sets a loss-timer floor for direct carriers in ms (test/experiment only; off by default). `-direct-win-ms N` (3.4.0) sets how many ms of delivery a direct carrier keeps in flight (default 1000; accepted range 100-5000; a smaller value can lower the round trip under a bulk upload, at some risk to throughput on lossy legs; test/experiment only). The `WAT_DIRECT_WIN_MS` environment variable remains supported as the startup default.
+  2.4.17 rules for both. `WAT_DIRECT_LOSS_MS=N` sets a loss-timer floor for direct carriers in ms (test/experiment only; off by default). `-direct-win-ms N` (3.3.8) sets how many ms of delivery a direct carrier keeps in flight (default 1000; accepted range 100-5000; a smaller value can lower the round trip under a bulk upload, at some risk to throughput on lossy legs; test/experiment only). The `WAT_DIRECT_WIN_MS` environment variable remains supported as the startup default.
 - **Speed test** takes `streams=N` (1-32, default 16 since 3.3.0; was 8): `/speedtest?dir=down&mb=200&streams=16`. One stream rides one
   pool connection now, so a single-stream test shows one connection's speed.
 - **More connections.** `conns: 16` beat 8 on this path (73.8 against 51 MB/s); 32 fell to 26 MB/s from loss
