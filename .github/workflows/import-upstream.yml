@@ -26,7 +26,7 @@ jobs:
           git clone --filter=blob:none https://github.com/JohnWatsoon/WatTunnel.git /tmp/wattunnel-upstream
           git -C /tmp/wattunnel-upstream checkout --detach "$UPSTREAM_COMMIT"
           test "$(git -C /tmp/wattunnel-upstream rev-parse HEAD)" = "$UPSTREAM_COMMIT"
-          rsync -a --exclude='.git' /tmp/wattunnel-upstream/ ./
+          rsync -a --exclude='.git' --exclude='.github/workflows/**' /tmp/wattunnel-upstream/ ./
 
       - name: Commit imported baseline
         run: |
