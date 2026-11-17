@@ -7,10 +7,13 @@ The matching private key must remain offline and must never be committed to this
 
 The `Fork CI` workflow runs Go tests, checks shell syntax, builds the Linux amd64 engine, and uploads an unsigned artifact containing:
 
-- `wattun`
+- Linux amd64 and arm64 engine binaries
+- Windows amd64 engine binary
+- Linux amd64 and arm64 wprobe binaries
+- Windows amd64 wprobe binary
 - `wattun-manager`
 - `install.sh`
-- `wattun.sha256`
+- per-binary `.sha256` sidecars
 - `SHA256SUMS`
 
 ## Sign the release checksum manifest
@@ -22,7 +25,7 @@ openssl dgst -sha256 -sign release-private.pem -out SHA256SUMS.sig SHA256SUMS
 openssl dgst -sha256 -verify release-public.pem -signature SHA256SUMS.sig SHA256SUMS
 ```
 
-The verification command must print `Verified OK`. Upload `wattun`, `wattun.sha256`, `wattun-manager`, `install.sh`, `SHA256SUMS`, and `SHA256SUMS.sig` together to a GitHub Release. Do not change any payload after signing.
+The verification command must print `Verified OK`. Upload every generated payload from `dist/`, plus `SHA256SUMS.sig`, together to a GitHub Release. Keep the filenames unchanged. Do not change any payload after signing.
 
 ## Important
 
