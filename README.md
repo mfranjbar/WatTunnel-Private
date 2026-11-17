@@ -27,14 +27,14 @@ Iran needs.
 **1. Install on both servers**
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/mfranjbar/WatTunnel-Private/import/upstream-3.3.7/install.sh)
 ```
 
 <details>
 <summary>GitHub is blocked on the server?</summary>
 
 ```bash
-WAT_PROXY=https://ghproxy.net/ bash <(curl -fsSL https://ghproxy.net/https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
+WAT_PROXY=https://ghproxy.net/ bash <(curl -fsSL https://ghproxy.net/https://raw.githubusercontent.com/mfranjbar/WatTunnel-Private/import/upstream-3.3.7/install.sh)
 ```
 
 The proxy is a third-party mirror. The binary and manager are still checked against the signed release, but the
