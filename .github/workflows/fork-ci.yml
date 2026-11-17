@@ -18,8 +18,9 @@ concurrency:
 
 jobs:
   test-build:
-    name: Test and build (Go 1.26)
+    name: Test and build (Go 1.26, Linux amd64)
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,7 +31,7 @@ jobs:
           go-version: '1.26.0'
           cache: true
 
-      - name: Verify formatting
+      - name: Verify Go formatting
         run: |
           files="$(gofmt -l $(git ls-files '*.go'))"
           if [ -n "$files" ]; then
@@ -38,8 +39,27 @@ jobs:
             exit 1
           fi
 
-      - name: Run tests
-        run: go test ./...
+      - name: Verify shell scripts
+        run: bash -n install.sh wattun-manager
 
-      - name: Build wattun
-        run: go build -trimpath -ldflags="-s -w" -o dist/wattun ./cmd/wattun
+      - name: Run tests
+        run: go test -timeout 20m ./...
+
+      - name: Build release payload
+        run: |
+          mkdir -p dist
+          CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -trimpath -ldflags="-s -w" -o dist/wattun ./cmd/wattun
+          cp install.sh wattun-manager dist/
+          chmod 755 dist/install.sh dist/wattun-manager dist/wattun
+          cd dist
+          sha256sum wattun > wattun.sha256
+          sha256sum wattun install.sh wattun-manager > SHA256SUMS
+          cd ..
+
+      - name: Upload unsigned release payload
+        uses: actions/upload-artifact@v4
+        with:
+          name: wattunnel-linux-amd64-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
