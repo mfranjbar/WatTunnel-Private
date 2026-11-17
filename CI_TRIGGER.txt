@@ -1,1 +1,1 @@
-CI trigger marker for the current fork-module-path fix validation. No runtime effect.
+CI trigger marker for the complete Go import-path cleanup validation. No runtime effect.
