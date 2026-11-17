@@ -43,15 +43,15 @@ REPO=${WAT_REPO:-mfranjbar/WatTunnel-Private}
 # This PEM must stay byte-identical to SIG_PUB in install.sh; regenerate the key in both scripts together.
 SIG_PUB=$(cat <<'PEM'
 -----BEGIN PUBLIC KEY-----
-MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEA0j+yK26CzKRD+am5rQZJ
-v8zChkZ5HuwQ4uBtj2mKfFRG8mrj7XN3iW60QEj7Le/fAYtk4hHvqsxb6Xhxw303
-+rFCBxKr+mwc3GOB/zVh/fzNqN2pXzKCT+mSKiaDfwUmCizKFNUUCCnhNVpEx9hl
-A4B4n5iBgxW0G/ks4hOujx6teaKUN44+cZNgPshPSQ5KdiqQBi0rFCiSAKBCh1vL
-j07u5S/mvU8L8u9M6sUzST0mXcGw9WKQmAiIOCqAwLiyV1RtDodgaCIxLPJ93Qo/
-uK4DzYX3Ker8lW6MRKXgX3fAVXoyj/ZaE3oh1ZibVefAy6w7qB74JvQPv4nFvS/Y
-VJXpxiHiqE/YMdHbS9eCQnqjHVKmGWvBVPo/IlUiJFbl8nIEFZVij32Cp8A4awO2
-IORyD7iC8bA7AZHruzVfiUtrYA5XhBTRJplqws8kM0Ig4sLrws0HPOY4xOBRtSVh
-vgY6Qw/EWglth/K24PEC8AiuJYIRRkn/Kq+SBIRu8qVrAgMBAAE=
+MIIBojANBgkqhkiG9w0BAQEFAAOCAY8AMIIBigKCAYEAneb9CnXNqsnBIh00zwBS
+QEsmTW4rAYFEPTd+AgNRmD0lz3moUllQpA/nbUg366aCGWYAwHZ+CH9AdLgBHPcm
+7znQCo7mrMYbz9+0KrwDJAIvRryeQ5qG8iPA0gU6eRaO/oSw/2DBE16L6nRZODOC
+03RzPhRqqHV8hbrxvNbE/syg3FKOTlpWsU9AKHaLO8YmIZtmejFvX8yIynGOTFY3
+XXa4r2QGR3fOffo/40r9MSPPIIRz3eJ8rzPCm23hiOHbLhKrRZd4KbO6CLKvV1vd
+DVjzLGTgGaHN3LjpgDGrV6m7fTyLMAnKW2y0uV8I+IiLb8TNRKGtahJsG4WlJJsv
+RKMzaCxWcRWEO/PvwZb+WEkSKUFvZ04/3/6pbfL5jKHe+0Z0rd4g+Uaf4lSJP7pZ
+E4AMhOV128eNj7OoxE7466Mlw2LrbA2QZn86Sfmz4iAh+oEyhADN1L3DPZJKxKrF
+TXaozsDEJFIjnF0BmayV9Axq3YcUElg+qRgkIC6mC3tnAgMBAAE=
 -----END PUBLIC KEY-----
 PEM
 )
@@ -73,7 +73,7 @@ sums_verify() { # sums sig [pubfile]: the optional third argument lets the self-
   return "$rc"
 }
 sums_has() { grep -qx -- "$3  $2" "$1"; } # sums name sha
-MGR_VERSION=2026110802   # YYYYMMDDNN; install.sh refuses to replace a newer manager with an older one
+MGR_VERSION=2026111701   # YYYYMMDDNN; install.sh refuses to replace a newer manager with an older one
 HEAL_UNIT=$WAT_PREFIX-heal
 MCONF=$CONF/.manager.conf
 self_cmd() { # the command to type to start this manager (user-facing hints)
