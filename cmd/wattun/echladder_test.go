@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 // TestDNSRelayGuardsAndRoundTrip: the built-in DNS relay (server target port 53, -ech ladder's second rung).

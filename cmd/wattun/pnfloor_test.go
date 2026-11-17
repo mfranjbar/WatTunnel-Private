@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 // A mark from a run whose clock was ahead (here: one day) is never undercut by the next run's mark.

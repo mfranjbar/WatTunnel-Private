@@ -5,7 +5,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 // newMultiRig starts a wattun server on the udp carrier (loopback) and a client tunnel of n sessions to it, plus

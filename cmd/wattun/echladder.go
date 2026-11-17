@@ -20,7 +20,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 // dnsRelayPort is the reserved server target port for the built-in DNS relay (like speedTestPort 0).

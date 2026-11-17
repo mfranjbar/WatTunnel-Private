@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 // tcpRig: a wattun client+server pair over the udp carrier on loopback, one echo service, one public port.

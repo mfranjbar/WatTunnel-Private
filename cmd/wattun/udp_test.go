@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 // echoUDP is a UDP echo service on 127.0.0.1.

@@ -6,7 +6,7 @@ package main
 import (
 	"testing"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 func TestClampMaxPayload(t *testing.T) {
