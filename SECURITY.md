@@ -3,7 +3,7 @@
 ## Supported versions
 
 Only the latest release (`3.x` from the
-[releases page](https://github.com/JohnWatsoon/WatTunnel/releases)) is supported. Update both servers — old and
+[releases page](https://github.com/mfranjbar/WatTunnel-Private/releases)) is supported. Update both servers — old and
 new versions are wire-compatible, but a fix only helps the end that runs it.
 
 ## Reporting a vulnerability
