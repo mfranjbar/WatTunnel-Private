@@ -6,7 +6,7 @@
 
 **Encrypted Iran ↔ Kharej port forwarding that keeps working when the network is filtered, even when only ping gets through.**
 
-[![Release](https://img.shields.io/badge/release-v3.3.7-blue?style=flat-square)](https://github.com/JohnWatsoon/WatTunnel/releases)
+[![Release](https://img.shields.io/badge/release-v3.3.7-blue?style=flat-square)](https://github.com/mfranjbar/WatTunnel-Private/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Go](https://img.shields.io/badge/Go-1.26-00ADD8?style=flat-square&logo=go)](go.mod)
 ![Platform](https://img.shields.io/badge/platform-linux%20amd64%20%7C%20arm64%20%7C%20windows-lightgrey?style=flat-square)
@@ -41,7 +41,7 @@ The proxy is a third-party mirror. The binary and manager are still checked agai
 `install.sh` you fetch through it is not, so prefer the release files or a `git clone` when you can.
 
 Or download `wattun-linux-amd64`, `install.sh` and `wattun-manager` from the
-[releases](https://github.com/JohnWatsoon/WatTunnel/releases) page, put the binary in `dist/` next to `install.sh`,
+[releases](https://github.com/mfranjbar/WatTunnel-Private/releases) page, put the binary in `dist/` next to `install.sh`,
 and run `bash install.sh`.
 </details>
 
@@ -225,7 +225,7 @@ Everything else is in [docs/TECHNICAL.md](docs/TECHNICAL.md):
 [Windows and building from source](docs/TECHNICAL.md#build-and-test)
 
 - Telegram channel (news and releases): [@WatxDev](https://t.me/WatxDev), developer: [@watxox](https://t.me/watxox)
-- Bugs and ideas: [issues](https://github.com/JohnWatsoon/WatTunnel/issues). A change that makes the ICMP path
+- Bugs and ideas: [issues](https://github.com/mfranjbar/WatTunnel-Private/issues). A change that makes the ICMP path
   slower won't be merged.
 - License: [MIT](LICENSE). Uses `golang.org/x/crypto`, `x/net` and `x/sys` (BSD-3-Clause). GOST, Backhaul and
   BackPack were studied for ideas and as benchmarks; no code was copied.
