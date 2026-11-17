@@ -6,7 +6,7 @@
 
 **تونل رمزنگاری‌شده‌ی ایران ⇄ خارج که وقتی شبکه فیلتر است هم کار می‌کند، حتی وقتی فقط پینگ رد می‌شود.**
 
-[![Release](https://img.shields.io/badge/release-v3.3.7-blue?style=flat-square)](https://github.com/JohnWatsoon/WatTunnel/releases)
+[![Release](https://img.shields.io/badge/release-v3.3.7-blue?style=flat-square)](https://github.com/mfranjbar/WatTunnel-Private/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Go](https://img.shields.io/badge/Go-1.26-00ADD8?style=flat-square&logo=go)](go.mod)
 ![Platform](https://img.shields.io/badge/platform-linux%20amd64%20%7C%20arm64%20%7C%20windows-lightgrey?style=flat-square)
@@ -44,7 +44,7 @@ WAT_PROXY=https://ghproxy.net/ bash <(curl -fsSL https://ghproxy.net/https://raw
 
 این پروکسی یک آینه‌ی ثالث است. فایل اجرایی و منیجر همچنان با ریلیز امضاشده سنجیده می‌شوند، ولی `install.sh` که از آینه می‌گیرید نه؛ پس اگر می‌توانید، فایل‌های ریلیز یا `git clone` را ترجیح دهید.
 
-راه دیگر: فایل‌های `wattun-linux-amd64`، `install.sh` و `wattun-manager` را از صفحه‌ی [Releases](https://github.com/JohnWatsoon/WatTunnel/releases) بگیرید، فایل اجرایی را داخل پوشه‌ی `dist/` کنار `install.sh` بگذارید و `bash install.sh` را بزنید.
+راه دیگر: فایل‌های `wattun-linux-amd64`، `install.sh` و `wattun-manager` را از صفحه‌ی [Releases](https://github.com/mfranjbar/WatTunnel-Private/releases) بگیرید، فایل اجرایی را داخل پوشه‌ی `dist/` کنار `install.sh` بگذارید و `bash install.sh` را بزنید.
 
 </div>
 </details>
@@ -202,7 +202,7 @@ WatTunnel سرور **ایران** (جایی که کاربرها وصل می‌ش
 بقیه‌ی راهنما در [docs/TECHNICAL.md](docs/TECHNICAL.md) است (به انگلیسی): [حالت معکوس](docs/TECHNICAL.md#reverse-mode) · [حالت خودکار](docs/TECHNICAL.md#auto-mode) · [کلودفلر](docs/TECHNICAL.md#cdn-tuning) · [ترکیب روش‌ها](docs/TECHNICAL.md#bonding) · [مدیریت تونل‌ها](docs/TECHNICAL.md#managing-tunnels) · [فایل کانفیگ](docs/TECHNICAL.md#config-file) · [مانیتورینگ](docs/TECHNICAL.md#metrics) · [رفع مشکل](docs/TECHNICAL.md#troubleshooting) · [تاریخچه‌ی نسخه‌ها](docs/TECHNICAL.md#release-history) · [ویندوز و ساختن از سورس](docs/TECHNICAL.md#build-and-test)
 
 - کانال تلگرام برای خبرها و نسخه‌های جدید: [@WatxDev](https://t.me/WatxDev)؛ ارتباط با سازنده: [@watxox](https://t.me/watxox)
-- گزارش باگ و پیشنهاد: [Issues](https://github.com/JohnWatsoon/WatTunnel/issues). تغییری که مسیر ICMP را کندتر کند پذیرفته نمی‌شود.
+- گزارش باگ و پیشنهاد: [Issues](https://github.com/mfranjbar/WatTunnel-Private/issues). تغییری که مسیر ICMP را کندتر کند پذیرفته نمی‌شود.
 - مجوز: [MIT](LICENSE). از `golang.org/x/crypto`، `x/net` و `x/sys` (BSD-3-Clause) استفاده می‌کند. GOST، Backhaul و BackPack فقط برای ایده گرفتن و مقایسه بررسی شدند و هیچ کدی از آن‌ها کپی نشده است.
 
 </div>
