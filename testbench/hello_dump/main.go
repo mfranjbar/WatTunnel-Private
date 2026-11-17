@@ -13,7 +13,7 @@ import (
 	"log"
 	"strings"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 func main() {
