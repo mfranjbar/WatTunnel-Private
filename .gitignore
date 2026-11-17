@@ -1,0 +1,27 @@
+dist/
+*.exe
+CLAUDE.md
+AGENTS.md
+AGENT-HANDOFF.md
+CHANGES-SINCE-2.5.0.md
+RESEARCH.md
+bugs.md
+.gocache/
+.gomodcache/
+.gopath/
+.acl-recovery/
+wattun-release-signing.pem
+wattun-release-signing.pub.pem
+REPORT.md
+.goshort/
+.mimocode/
+.smoke/
+*.pcap
+Field Test*.md
+*HANDOFF*.md
+FIELD*.md
+.qoder/
+.claude/
+.dsh/
+/before-after-ui.txt
+
