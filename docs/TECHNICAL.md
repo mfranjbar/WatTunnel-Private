@@ -1849,6 +1849,7 @@ Every flag can also be a config key. Flags win over the file.
 | `-port-offset N` | 0 | Added to every client listen port. |
 | `-lanes N` | 4 | ICMP identifiers. |
 | `-conns N` | 0 (auto) | Pool connections. |
+| `-direct-win-ms N` | 0 (built-in 1000ms) | Direct TCP/TLS pool carriers: delivery window in flight, 100-5000ms. Use matched A/B tests; smaller values can reduce queueing RTT but may reduce throughput on lossy paths. |
 | `-pool-rotate D` | `0` (off) | Client, pool carriers: recycle a healthy connection after this long (`30m`, `4h`, seconds), jittered ±40%; 0 = off (2.8.0; a `reverse` server that dials honours it since 3.0.2). |
 | `-pool-rotate-bytes N` | `0` (off) | With or instead of `-pool-rotate`: also recycle after this many bytes (`500MB`, `4GB`, `300k`), jittered ±25%; 0 = off (2.8.1; `reverse` server since 3.0.2). |
 | `-mtu N` | 0 | Datagram cap. |
@@ -2422,7 +2423,7 @@ Raw TCP on the same path (8 BBR connections, no tunnel) moved 78 MB/s; 32 connec
   an SSH session that once pasted a large file turns interactive again once it goes quiet.
 - **Loss cuts off.** A direct pool no longer cuts its rate on loss (TCP's loss is not ours; `WAT_REL_LOSSCUT=1`
   restores it), and its window also covers 2 x srtt (`WAT_CWND_MINRTT=1` turns that off). CDN tunnels keep the
-  2.4.17 rules for both. `WAT_DIRECT_LOSS_MS=N` sets a loss-timer floor for direct carriers in ms (test/experiment only; off by default). `WAT_DIRECT_WIN_MS=N` (3.3.7) sets how many ms of delivery a direct carrier keeps in flight (default 1000; a smaller value lowers the round trip under a bulk upload, at some risk to throughput on lossy legs; test/experiment only).
+  2.4.17 rules for both. `WAT_DIRECT_LOSS_MS=N` sets a loss-timer floor for direct carriers in ms (test/experiment only; off by default). `-direct-win-ms N` (3.4.0) sets how many ms of delivery a direct carrier keeps in flight (default 1000; accepted range 100-5000; a smaller value can lower the round trip under a bulk upload, at some risk to throughput on lossy legs; test/experiment only). The `WAT_DIRECT_WIN_MS` environment variable remains supported as the startup default.
 - **Speed test** takes `streams=N` (1-32, default 16 since 3.3.0; was 8): `/speedtest?dir=down&mb=200&streams=16`. One stream rides one
   pool connection now, so a single-stream test shows one connection's speed.
 - **More connections.** `conns: 16` beat 8 on this path (73.8 against 51 MB/s); 32 fell to 26 MB/s from loss
