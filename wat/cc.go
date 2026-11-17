@@ -117,6 +117,16 @@ const (
 // measured as 383-414 ms round trips under a 669-730 Mbit/s upload on an 81 ms route.
 var relDirectWin = directWin()
 
+// SetDirectWindow overrides the in-flight delivery window for direct reliable carriers.
+// Values <= 0 restore the platform default. Call before creating sessions.
+func SetDirectWindow(d time.Duration) {
+	if d > 0 {
+		relDirectWin = d
+	} else {
+		relDirectWin = time.Second
+	}
+}
+
 func directWin() time.Duration {
 	if n, err := strconv.Atoi(os.Getenv("WAT_DIRECT_WIN_MS")); err == nil && n > 0 {
 		return time.Duration(n) * time.Millisecond

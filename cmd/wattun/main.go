@@ -99,6 +99,7 @@ func main() {
 	batch := flag.String("batch", "", "icmp|udp: recvmmsg/sendmmsg batching, on|off (empty = the carrier default: on for icmp, off for udp); the same switch as WAT_BATCH, which this flag overrides (3.0.0)")
 	maxMB := flag.Float64("max-mbps", 0, "pace ceiling, MB/s per direction, per session (0 = the carrier default: 16 for a lone icmp carrier, 1250 (10 Gbit, i.e. no practical cap) otherwise; in a bond only the icmp path is held to 16 (3.2.0, before: the whole bond); 2.4.18, before: 200; 2.3.0, before: 16 for all)")
 	slackMs := flag.Int("slack-ms", 8, "tolerated RTT growth before slowing down, ms")
+	directWinMs := flag.Int("direct-win-ms", 0, "direct tcp/tls pool carriers: in-flight delivery window in milliseconds (100-5000; 0 = built-in default; tune with matched upload RTT/throughput A/B tests)")
 	metrics := flag.String("metrics", "", "serve JSON stats on this address (e.g. 127.0.0.1:19700)")
 	allowLo := flag.Int("allow-min", 1, "server: lowest target port a client may ask for")
 	allowHi := flag.Int("allow-max", 65535, "server: highest target port")
@@ -204,6 +205,12 @@ func main() {
 				log.Fatalf("config %s: %s: %v", *cfgPath, e.Key, err)
 			}
 		}
+	}
+	if *directWinMs != 0 {
+		if *directWinMs < 100 || *directWinMs > 5000 {
+			log.Fatalf("-direct-win-ms must be 0 or 100..5000, got %d", *directWinMs)
+		}
+		wat.SetDirectWindow(time.Duration(*directWinMs) * time.Millisecond)
 	}
 	debugOn = *debug
 	// F19 (3.3.0): which keys the config file set, so a shaped carrier can tell its -listen default (:4443, the udp
