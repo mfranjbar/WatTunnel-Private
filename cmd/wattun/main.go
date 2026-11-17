@@ -206,7 +206,7 @@ func main() {
 			}
 		}
 	}
-if *directWinMs != 0 {
+	if *directWinMs != 0 {
 		if *directWinMs < 100 || *directWinMs > 5000 {
 			log.Fatalf("-direct-win-ms must be 0 or 100..5000, got %d", *directWinMs)
 		}
