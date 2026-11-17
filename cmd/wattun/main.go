@@ -35,7 +35,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 // nameSet turns a carrier name list into the lookup maps below.
