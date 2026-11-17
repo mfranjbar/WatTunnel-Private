@@ -7,7 +7,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 )
 
 // A server session's packet numbers start at the wall clock in microseconds and advance by one per packet. A clock
