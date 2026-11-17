@@ -39,7 +39,7 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/JohnWatsoon/WatTunnel/wat"
+	"github.com/mfranjbar/WatTunnel-Private/wat"
 	"golang.org/x/sys/unix"
 )
 
