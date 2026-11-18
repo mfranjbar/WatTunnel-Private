@@ -2,6 +2,16 @@
 
 This document records the intended two-server deployment for this fork. It does not claim that a deployment has been tested on the owner's VPS pair.
 
+## Version and installation source
+
+- Fork module: `github.com/mfranjbar/WatTunnel-Private`
+- Fork code line: `import/upstream-3.3.7`
+- Fork version string: `3.3.8`
+- Install script source: this fork's `import/upstream-3.3.7/install.sh`, not the upstream JohnWatsoon repository.
+- The current CI artifact is unsigned and is not a signed GitHub Release. The installer verifies signed release manifests; do not bypass that check for production.
+
+Install the same fork build on both Linux hosts. Create the tunnel on Kharej first, copy its token securely to Iran, then create the Iran side. Start with one dedicated test port mapping; do not migrate production listeners until bidirectional tests pass.
+
 ## Intended traffic path
 
 ```
@@ -52,4 +62,4 @@ A result is accepted only when the same endpoints, payload sizes, stream counts,
 
 ## Current implementation status
 
-This file is a deployment design and acceptance checklist only. The current code baseline is upstream WatTunnel 3.3.7 with fork module-path and repository/install defaults. No Iran-specific transport algorithm change or live two-VPS validation is claimed by this document.
+This file is a deployment design and acceptance checklist only. The fork identifies itself as 3.3.8 and exposes a configurable direct-carrier startup window (`-direct-win-ms`, 100–5000 ms; default behavior remains unchanged). This exposes a timing parameter; it is not evidence of an Iran-specific transport algorithm improvement. No live two-VPS validation is claimed.

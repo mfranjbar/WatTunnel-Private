@@ -30,14 +30,14 @@
 </div>
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/mfranjbar/WatTunnel-Private/import/upstream-3.3.7/install.sh)
 ```
 
 <details>
 <summary>گیت‌هاب روی سرورتان باز نمی‌شود؟</summary>
 
 ```bash
-WAT_PROXY=https://ghproxy.net/ bash <(curl -fsSL https://ghproxy.net/https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
+WAT_PROXY=https://ghproxy.net/ bash <(curl -fsSL https://ghproxy.net/https://raw.githubusercontent.com/mfranjbar/WatTunnel-Private/import/upstream-3.3.7/install.sh)
 ```
 
 <div dir="rtl">
