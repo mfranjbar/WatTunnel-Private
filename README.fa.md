@@ -6,7 +6,7 @@
 
 **تونل رمزنگاری‌شده‌ی ایران ⇄ خارج که وقتی شبکه فیلتر است هم کار می‌کند، حتی وقتی فقط پینگ رد می‌شود.**
 
-[![Release](https://img.shields.io/badge/release-v3.3.7-blue?style=flat-square)](https://github.com/mfranjbar/WatTunnel-Private/releases)
+[![Release](https://img.shields.io/badge/release-v3.3.8-blue?style=flat-square)](https://github.com/mfranjbar/WatTunnel-Private/releases)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue?style=flat-square)](LICENSE)
 [![Go](https://img.shields.io/badge/Go-1.26-00ADD8?style=flat-square&logo=go)](go.mod)
 ![Platform](https://img.shields.io/badge/platform-linux%20amd64%20%7C%20arm64%20%7C%20windows-lightgrey?style=flat-square)
@@ -30,14 +30,14 @@
 </div>
 
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/mfranjbar/WatTunnel-Private/import/upstream-3.3.7/install.sh)
 ```
 
 <details>
 <summary>گیت‌هاب روی سرورتان باز نمی‌شود؟</summary>
 
 ```bash
-WAT_PROXY=https://ghproxy.net/ bash <(curl -fsSL https://ghproxy.net/https://raw.githubusercontent.com/JohnWatsoon/WatTunnel/main/install.sh)
+WAT_PROXY=https://ghproxy.net/ bash <(curl -fsSL https://ghproxy.net/https://raw.githubusercontent.com/mfranjbar/WatTunnel-Private/import/upstream-3.3.7/install.sh)
 ```
 
 <div dir="rtl">

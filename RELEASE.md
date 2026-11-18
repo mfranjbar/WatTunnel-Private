@@ -32,4 +32,4 @@ The verification command must print `Verified OK`. Upload every generated payloa
 - The private key is not stored in GitHub, Actions, or this repository.
 - The current CI artifact is not yet a signed release and must not be used as an online release.
 - The installer verifies the signed manifest and checks the engine and manager hashes before installing release assets.
-- The first supported CI release target is Linux amd64. No VPS has been modified by this workflow.
+- The CI package job builds Linux amd64, Linux arm64, and Windows amd64 engine payloads (plus matching wprobe payloads). No VPS has been modified by this workflow.
